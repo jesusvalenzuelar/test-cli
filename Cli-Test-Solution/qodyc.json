@@ -1,0 +1,71 @@
+{
+  "projectInfo": {
+    "name": "Cli-Test",
+    "version": "1.0.0"
+  },
+  "staticAnalysis": {
+    "namingConventions": {
+      "classes": "PascalCase",
+      "methods": "PascalCase",
+      "interfaces": "IPascalCase",
+      "privateFields": "_camelCase",
+      "asyncSuffix": true
+    },
+    "metrics": {
+      "maxLineLength": 120,
+      "maxMethodLines": 30,
+      "maxParameters": 4,
+      "disallowPublicFields": true,
+      "enforcePrimaryConstructors": false
+    },
+    "sonarQube": {
+      "syncWithServer": false,
+      "failOnSeverity": [ "Blocker", "Critical" ],
+      "rules": [
+        "S101",
+        "S1135",
+        "S2365"
+      ]
+    }
+  },
+  "unitTesting": {
+    "framework": "MSTest",
+    "coverage": {
+      "minPercentageRequired": 80,
+      "checkOnlyModifiedFiles": true,
+      "allowGapsInNewCode": false,
+      "tooling": "Microsoft.CodeCoverage"
+    },
+    "assertions": {
+      "requireDescriptionOnIgnore": true,
+      "maxAssertsPerTest": 3,
+      "useFluentAssertions": false
+    },
+    "autoGeneration": {
+      "testProjectName": "Tests",
+      "mockingLibrary": "Moq",
+      "generateOnMissing": true,
+      "namingConvention": "{ClassName}Tests",
+      "testMethodPrefix": "TestMethod"
+    }
+  },
+  "aiSuggestions": {
+    "enabled": true,
+    "model": "claude-4.5-sonnet",
+    "contextLevel": "method",
+    "preferredLanguage": "es"
+  },
+  "gitIntegration": {
+    "provider": "LibGit2Sharp",
+    "baseBranch": "master",
+    "analysisScope": "StagedAndUnstaged",
+    "ignorePatterns": [
+      "**/bin/**",
+      "**/obj/**",
+      "**/*.g.cs",
+      "**/Migrations/**"
+    ],
+    "failOnUncommittedChanges": false,
+    "trackHunks": true
+  }
+}
